@@ -1,0 +1,72 @@
+<div class="img">
+  <div class="container">
+    <div class="register">
+      <form ngNativeValidate [formGroup]="formRegister" (ngSubmit)="register()">
+        <h2>Register</h2>
+        <div class="form-control">
+          <label for="fname">First Name</label>
+          <input
+            type="text"
+            formControlName="firstName"
+            name="firstName"
+            required
+            placeholder="Pepito"
+          />
+        </div>
+        <div class="form-control">
+          <label for="lname">Last Name</label>
+          <input
+            type="text"
+            formControlName="lastName"
+            name="lastName"
+            required
+            placeholder="Perez"
+          />
+        </div>
+        <div class="form-control">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            formControlName="email"
+            name="email"
+            required
+            placeholder="example@example.com"
+          />
+          <div *ngIf="emailValid" class="message-error">
+            <p>This is email already exists</p>
+          </div>
+        </div>
+        <div class="form-control">
+          <label for="password">Password - min 8 characters </label>
+          <input
+            type="password"
+            formControlName="password"
+            name="password"
+            minlength="8"
+            required
+            placeholder="********"
+          />
+        </div>
+        <div class="form-control">
+          <label for="cpassword">Confirm Your Password</label>
+          <input
+            type="password"
+            formControlName="cpassword"
+            name="cpassword"
+            minlength="8"
+            required
+            placeholder="********"
+          />
+        </div>
+        <div *ngIf="formRegister.errors?.areNotEqual" class="message-error">
+          <p>The passwords dosn't match</p>
+        </div>
+        <button [disabled]="!formRegister.valid || emailValid" type="submit">
+          Register
+        </button>
+      </form>
+
+      <p>I have an account <a routerLink="/login">Log In</a></p>
+    </div>
+  </div>
+</div>

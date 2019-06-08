@@ -1,0 +1,11 @@
+<div *ngIf="visible" class="modal animated fadeIn">
+  <div *ngIf="!loading">
+    <h3 class="{{ type }}"></h3>
+    <p>{{ message }}</p>
+  </div>
+
+  <div *ngIf="loading">
+    <div class="loading"></div>
+    <p>loading ...</p>
+  </div>
+</div>

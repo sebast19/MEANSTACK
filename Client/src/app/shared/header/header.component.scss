@@ -1,0 +1,69 @@
+header {
+  background-color: rgba(0, 0, 0, 0.9);
+  box-shadow: 4px 0 4px #222;
+  color: #fff;
+  height: 80px;
+  line-height: 55px;
+  position: relative;
+  width: 100%;
+
+  ul {
+    float: right;
+    list-style: none;
+    margin-right: 20px;
+    padding: 0;
+    width: 80px;
+
+    li a {
+      background-color: #0e88e7;
+      color: #fff;
+      padding: 10px;
+      font-weight: bold;
+      text-decoration: none;
+
+      &:hover {
+        background-color: #0c74c6;
+        cursor: pointer;
+      }
+    }
+  }
+
+  [class^="ROLE"] {
+    box-sizing: border-box;
+    font-size: 9px;
+    padding: 3px;
+    border-radius: 4px;
+    color: #333;
+  }
+
+  .container-info {
+    display: inline-block;
+    height: 80px;
+    width: 370px;
+
+    .info {
+      align-items: center;
+      display: flex;
+      height: 80px;
+      width: inherit;
+
+      .text {
+        line-height: 1;
+        margin-left: 10px;
+        width: 250px;
+
+        span {
+          display: inline-block;
+        }
+      }
+
+      img {
+        border: 2px solid #0e88e7;
+        border-radius: 50%;
+        height: 45px;
+        margin-left: 10px;
+        width: 45px;
+      }
+    }
+  }
+}

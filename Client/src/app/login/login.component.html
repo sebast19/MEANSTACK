@@ -1,0 +1,51 @@
+<div class="img">
+  <div class="container">
+    <div class="login animated fadeIn">
+      <form ngNativeValidate #f="ngForm" (ngSubmit)="login(f)">
+        <p *ngIf="is_disconnect" class="warning">
+          Server Disconnected, try later.
+        </p>
+        <h2>Log In</h2>
+        <div class="form-control">
+          <label for="email">Email</label>
+          <input
+            [ngModel]="email"
+            required
+            type="email"
+            name="email"
+            placeholder="example@example.com"
+          />
+        </div>
+        <div class="form-control">
+          <label for="password">Password</label>
+          <input
+            [disabled]="is_disconnect"
+            ngModel
+            required
+            type="password"
+            name="password"
+            placeholder="*********"
+          />
+        </div>
+
+        <div class="form-control">
+          <input [ngModel]="remember" type="checkbox" name="remember" />
+          <span>Remember Me</span>
+        </div>
+
+        <button
+          [ngClass]="{ disabled: is_disconnect }"
+          [disabled]="is_disconnect"
+          type="submit"
+          id="button"
+        >
+          Log in
+        </button>
+      </form>
+
+      <p>
+        Don't have an account yet? <a routerLink="/register">Register Here</a>
+      </p>
+    </div>
+  </div>
+</div>

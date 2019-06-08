@@ -1,0 +1,22 @@
+<header>
+  <nav>
+    <div class="container-info">
+      <div class="info">
+        <img src="assets/img/PolarBears.jpg" alt="Img user" />
+        <div class="text">
+          <span><strong>User</strong>: {{ user.email }}</span>
+          <span
+            ><strong>Role</strong>:
+            <span [ngClass]="user.role">{{
+              user.role | beautyRole: user.role
+            }}</span></span
+          >
+        </div>
+      </div>
+    </div>
+
+    <ul>
+      <li><a (click)="logout()">Log Out</a></li>
+    </ul>
+  </nav>
+</header>
